@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminService } from './ApiServices/admin.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Frontend_Admin';
+constructor(private admin:AdminService){}
+
+  isLoggedIn():boolean{
+    return this.admin.checkToken();
+  }
 }

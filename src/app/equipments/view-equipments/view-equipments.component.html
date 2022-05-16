@@ -1,0 +1,37 @@
+<div class="container-fluid" style="margin: 0;padding:0;">
+    <div class="banner">
+        <hr>
+        <h1>Services</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic odio beatae quam illum soluta saepe aperiam autem perspiciatis! Minima eligendi possimus ipsum eveniet dignissimos quibusdam doloribus quod nostrum, asperiores nobis.</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div *ngFor="let item of tools" class="row cards2">
+        <div class="col-lg-6 col-md-6 col-sm-12 left2">
+            <img src="{{item.images}}" alt="" class="left2_img">
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
+            <h1>{{item.name}}</h1>
+
+            <button class="view_more" (click)="service_item(item._id)">View More</button>
+
+            <p class="description">Description : {{item.description}}</p>
+            <h4>Fare price : {{item.charges}}</h4>
+            <div class="reviews">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-comment"></i>
+                <i class="fas fa-share-alt"></i>
+            </div>
+        </div>
+    </div>
+</div>
