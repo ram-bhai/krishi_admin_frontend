@@ -30,7 +30,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     NavbarComponent,
     ErrorpageComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+
   ],
   imports: [
     BrowserModule,
