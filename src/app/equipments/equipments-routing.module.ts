@@ -4,11 +4,14 @@ import { AddEquipmentsComponent } from './add-equipments/add-equipments.componen
 import { ViewEquipmentsComponent } from './view-equipments/view-equipments.component';
 
 const routes: Routes = [
-  {path:'',component:ViewEquipmentsComponent,
+  {path:'',component:AddEquipmentsComponent,
+  //ViewEquipmentComponent
+  //
 children:[
-  {path:'add-equips',component:AddEquipmentsComponent}
-]
-}
+ // {path:'add-equips',component:AddEquipmentsComponent},
+  
+  ]
+ }
 ];
 
 @NgModule({

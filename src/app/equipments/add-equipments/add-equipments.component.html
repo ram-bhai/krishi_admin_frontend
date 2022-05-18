@@ -1,1 +1,39 @@
-<p>add-equipments works!</p>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label>Service Name</label>
+      <input [(ngModel)]="addequp.name" type="text" name="Service Name" class="form-control" placeholder="service name">
+    </div>
+    <div class="form-group">
+      <label>Service Chrage</label>
+      <input [(ngModel)]="addequp.charges" type="number" name="Service Charge" class="form-control"
+        placeholder="charges">
+    </div>
+    <div class="form-group">
+      <label>Travelling Charge</label>
+      <input [(ngModel)]="addequp.travellingCharge" name="Travelling Charge" type="number" class="form-control"
+        placeholder="Travelling charges">
+    </div>
+    <div class="form-group">
+      <label>Service Description</label>
+      <input [(ngModel)]="addequp.description" type="text" name="Service Description" class="form-control"
+        placeholder="Service Description">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input [(ngModel)]="addequp.adminDescription" name="Description" type="text" class="form-control"
+        placeholder="Description">
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input (change)="selectimage($event)" type="file" name="image" class="form-control" placeholder="Image">
+    </div>
+    <div class="form-group">
+      <label>Vedio</label>
+      <input [(ngModel)]="addequp.vedio" type="text" name="vedio" class="form-control" placeholder="Vedio">
+    </div> <br>
+    <div class="form-group">
+      <button type="submit" (click)="addservice()" class="btn btn-success">ADD</button>
+    </div>
+  </form>
+</div>
