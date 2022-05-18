@@ -30,4 +30,3 @@ export class EquipmentsModule {
   }
 }
 
-export class EquipmentsModule { }

@@ -4,7 +4,7 @@ import { AddItemsComponent } from './add-items/add-items.component';
 import { AddStorageComponent } from './add-storage/add-storage.component';
 
 const routes: Routes = [
-  //{path:'',component:AddStorageComponent}
+  
   {path:'',component:AddItemsComponent}
 ];
 

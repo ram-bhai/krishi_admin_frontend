@@ -15,15 +15,6 @@ children:[
 
 ]
 }
-  {path:'',component:AddEquipmentsComponent,
-  //ViewEquipmentComponent
-  //
-children:[
- // {path:'add-equips',component:AddEquipmentsComponent},
-  
-  ]
- }
-
 ];
 
 @NgModule({
