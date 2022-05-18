@@ -27,11 +27,8 @@ export class SigninComponent implements OnInit {
         this.admin.signIn(this.user).subscribe(data=>{
           this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);
-            
-
-          alert(data);
             sessionStorage.setItem("id",data.user._id); 
-            this.router.navigate(['home'],{relativeTo:this.active});
+            this.router.navigate(['home']);
         },err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){
