@@ -32,7 +32,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
     ErrorpageComponent,
     FooterComponent,
     HomePageComponent,
-    ConfirmationComponent
+
   ],
   imports: [
     BrowserModule,

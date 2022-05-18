@@ -1,0 +1,31 @@
+<div class="container">
+    <p>Please select your type of storage :</p>
+     <select class="form-control">
+         <option value="{{item._id}}" *ngFor="let item of storages">{{item.name}}</option>
+     </select>  <br>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input [(ngModel)]="additem.name" type="text" name="name" class="form-control" placeholder="name">
+    </div>
+    <div class="form-group">
+        <label>Weight</label>
+        <input [(ngModel)]="additem.charges" type="text" name="Weight" class="form-control" placeholder="Weight">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input [(ngModel)]="additem.descriptions" type="text" name="description" class="form-control" placeholder="description">
+    </div>
+    <div class="form-group">
+        <label>Tempreture</label>
+        <input [(ngModel)]="additem.tempreature" type="text" name="tempreature" class="form-control" placeholder="tempreature">
+    </div>
+    <div class="form-group">
+        <label>Charges</label>
+        <input type="number" name="charge" class="form-control" placeholder="charge">
+    </div>
+    <br>
+    <div class="form-group">
+        <button (click)="additems()" class="btn btn-success">ADD</button>
+    </div>
+</div>
