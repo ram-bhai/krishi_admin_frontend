@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { AdminService } from 'src/app/ApiServices/admin.service';
 import { EquipService } from 'src/app/ApiServices/equip.service';
 import { Addservice } from 'src/app/models/addservice';
 
@@ -10,7 +9,6 @@ import { Addservice } from 'src/app/models/addservice';
   styleUrls: ['./add-equipments.component.css']
 })
 export class AddEquipmentsComponent implements OnInit {
-  tools: any;
   addequp: Addservice = new Addservice("", "", "", "", "", "", "");
   constructor(public service: EquipService, public notifyService: ToastrService) { }
 

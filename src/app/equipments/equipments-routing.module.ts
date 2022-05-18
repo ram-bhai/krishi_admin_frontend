@@ -5,8 +5,11 @@ import { ViewEquipmentsComponent } from './view-equipments/view-equipments.compo
 
 const routes: Routes = [
   {path:'',component:AddEquipmentsComponent,
+  //ViewEquipmentComponent
+  //
 children:[
- // {path:'add-equips',component:AddEquipmentsComponent}
+ // {path:'add-equips',component:AddEquipmentsComponent},
+  
   ]
  }
 ];

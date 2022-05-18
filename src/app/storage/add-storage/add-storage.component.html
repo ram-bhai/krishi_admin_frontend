@@ -1,0 +1,36 @@
+<div class="container">
+    <p>Please select your type of storage :</p>
+     <select class="form-control" [(ngModel)]="addservice.storageId" >
+         <option value="{{item._id}}" *ngFor="let item of storages">{{item.name}}</option>
+     </select>  <br>
+    <p>Availablelity :</p>
+    <input type="radio" id="true" name="Availablelity" value="true">
+    <label for="true">True</label><br>
+    <input type="radio" id="false" name="Availablelity" value="false">
+    <label for="false">False</label><br>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input [(ngModel)]="addservice.name" type="text" name="image" class="form-control" placeholder="name">
+    </div>
+    <div class="form-group">
+        <label>Storage Description</label>
+        <input [(ngModel)]="addservice.storage_description" type="text" name="image" class="form-control" placeholder="description">
+    </div>
+    <div class="form-group">
+        <label>Capacity</label>
+        <input [(ngModel)]="addservice.capacity" type="text" class="form-control" placeholder="Capacity">
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input [(ngModel)]="addservice.location" type="text" name="image" class="form-control" placeholder="Location">
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input (change)="selectimage($event)" type="file" name="image" class="form-control" placeholder="Image">
+    </div>
+    <br>
+    <div class="form-group">
+        <button (click)="addstorage()" class="btn btn-success">ADD</button>
+    </div>
+</div>

@@ -19,4 +19,5 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ]
 })
+
 export class EquipmentsModule { }
