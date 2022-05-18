@@ -22,6 +22,7 @@ import { AdminService } from './ApiServices/admin.service';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
