@@ -5,6 +5,7 @@ import { AddEquipmentsComponent } from './add-equipments/add-equipments.componen
 import { EquipDetailComponent } from './equip-detail/equip-detail.component';
 import { ViewEquipmentsComponent } from './view-equipments/view-equipments.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+
 const routes: Routes = [
 
   {path:'',component:DashboardComponent,
@@ -15,15 +16,6 @@ children:[
 
 ]
 }
-  {path:'',component:AddEquipmentsComponent,
-  //ViewEquipmentComponent
-  //
-children:[
- // {path:'add-equips',component:AddEquipmentsComponent},
-  
-  ]
- }
-
 ];
 
 @NgModule({

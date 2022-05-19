@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContractService {
+  accept = "http://localhost:3000/contracts/"
 requests = "http://localhost:3000/contracts/view-requests";
 cancelled = "http://localhost:3000/contracts/cancelled";
 approve = "http://localhost:3000/contracts/update/";
@@ -28,6 +29,10 @@ deny = "http://localhost:3000/contracts/cancel/";
 
   cancellation(pending:any,verification:any,approved:any,cid:any):Observable<any>{
     return this.http.post(this.deny+cid,{pending:pending,verification:verification,isApproved:approved});
+  }
+
+  accepted():Observable<any>{
+    return this.http.get(this.accept);
   }
 
 }
