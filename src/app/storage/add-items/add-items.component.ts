@@ -17,7 +17,6 @@ export class AddItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.viewStorage().subscribe(data => {
-      alert(data);
       this.storages = data;
     })
   }

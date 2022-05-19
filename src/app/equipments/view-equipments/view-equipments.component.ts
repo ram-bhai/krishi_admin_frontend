@@ -1,3 +1,4 @@
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -50,7 +51,9 @@ remove(id:any){
   window.confirm("Are you sure")
   if(confirm()==true)
   {
+    
     this.equips.removeEquipment(id).subscribe(data=>{
+      console.log(data)
       if(data.message = "Deleted successfully"){
         this.notify.success("Equipment deleted");
       }

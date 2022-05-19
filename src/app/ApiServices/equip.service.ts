@@ -35,7 +35,7 @@ export class EquipService{
 
 
   removeEquipment(id:any){
-    return this.http.post<any>(this.remove,id);
+    return this.http.post<any>(this.remove,{id});
   }
 
 }
