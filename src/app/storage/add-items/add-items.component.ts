@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./add-items.component.css']
 })
 export class AddItemsComponent implements OnInit {
-  additem: Additems = new Additems('', 50, '', '', 0, '');
+  additem: Additems = new Additems('', 50, '', '', '', '');
   storage: any;
   storages: any
   data: any;

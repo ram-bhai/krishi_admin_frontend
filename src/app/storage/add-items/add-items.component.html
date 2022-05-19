@@ -3,23 +3,22 @@
      <select class="form-control" [(ngModel)]="additem.sid">
          <option value="{{item._id}}" *ngFor="let item of storages">{{item.name}}</option>
      </select>  <br>
-    <h1>{{additem.sid}}</h1>
     <div class="form-group">
         <label>Name</label>
         <input [(ngModel)]="additem.name" type="text" name="name" class="form-control" placeholder="name">
     </div>
-    <h1>{{additem.name}}</h1>
     <div class="form-group">
         <label>Weight</label>
         <input [(ngModel)]="additem.weight" type="text" name="Weight" class="form-control" placeholder="Weight">
     </div>
     <div class="form-group">
         <label>Description</label>
-        <input [(ngModel)]="additem.descriptions" type="text" name="description" class="form-control" placeholder="description">
+        <input [(ngModel)]="additem.description" type="text" name="description" class="form-control" placeholder="description">
     </div>
+
     <div class="form-group">
         <label>Tempreture</label>
-        <input [(ngModel)]="additem.tempreature" type="text" name="tempreature" class="form-control" placeholder="tempreature">
+        <input [(ngModel)]="additem.temperature" type="text" name="tempreature" class="form-control" placeholder="tempreature">
     </div>
     <div class="form-group">
         <label>Charges</label>
