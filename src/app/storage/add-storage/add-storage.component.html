@@ -1,8 +1,8 @@
 <div class="container">
     <p>Please select your type of storage :</p>
-     <select class="form-control" [(ngModel)]="addservice.storageId" >
+    <select class="form-control" [(ngModel)]="addservice.storageId">
          <option value="{{item._id}}" *ngFor="let item of storages">{{item.name}}</option>
-     </select>  <br>
+     </select> <br>
     <p>Availablelity :</p>
     <input type="radio" id="true" name="Availablelity" value="true">
     <label for="true">True</label><br>

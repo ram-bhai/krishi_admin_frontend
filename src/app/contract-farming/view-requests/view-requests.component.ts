@@ -111,7 +111,5 @@ export class ViewRequestsComponent implements OnInit {
   
   }
 }
-function ConfirmComponent(ConfirmComponent: any) {
-  throw new Error('Function not implemented.');
-}
+
 
