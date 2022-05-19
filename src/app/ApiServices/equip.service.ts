@@ -33,6 +33,7 @@ export class EquipService{
     return this.http.post<any>(this.add_equip,equip);
   }
 
+
   removeEquipment(id:any){
     return this.http.post<any>(this.remove,id);
   }
