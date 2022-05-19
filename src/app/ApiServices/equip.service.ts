@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Addservice } from '../models/addservice';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +21,5 @@ export class EquipService {
   add_service(equip:FormData){
     return this.http.post<any>(this.add_equip,equip);
   }
-
-
+  
 }

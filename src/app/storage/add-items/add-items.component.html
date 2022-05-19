@@ -1,16 +1,17 @@
 <div class="container">
-    <p>Please select your type of storage :</p>
-     <select class="form-control">
+    <p>Please select your stoarge name :</p>
+     <select class="form-control" [(ngModel)]="additem.sid">
          <option value="{{item._id}}" *ngFor="let item of storages">{{item.name}}</option>
      </select>  <br>
-
+    <h1>{{additem.sid}}</h1>
     <div class="form-group">
         <label>Name</label>
         <input [(ngModel)]="additem.name" type="text" name="name" class="form-control" placeholder="name">
     </div>
+    <h1>{{additem.name}}</h1>
     <div class="form-group">
         <label>Weight</label>
-        <input [(ngModel)]="additem.charges" type="text" name="Weight" class="form-control" placeholder="Weight">
+        <input [(ngModel)]="additem.weight" type="text" name="Weight" class="form-control" placeholder="Weight">
     </div>
     <div class="form-group">
         <label>Description</label>
@@ -22,7 +23,7 @@
     </div>
     <div class="form-group">
         <label>Charges</label>
-        <input type="number" name="charge" class="form-control" placeholder="charge">
+        <input type="text" [(ngModel)]="additem.charges" name="charge" class="form-control" placeholder="charge">
     </div>
     <br>
     <div class="form-group">
