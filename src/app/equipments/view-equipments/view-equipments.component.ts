@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/ApiServices/admin.service';
 import { EquipService } from 'src/app/ApiServices/equip.service';
 
@@ -18,6 +20,7 @@ page:number = 1;
 
   constructor(private router:Router,
     public dialog: MatDialog,
+    public notify:ToastrService,
     public admin:AdminService,
     public active:ActivatedRoute,
     private equips:EquipService) {}
@@ -29,14 +32,34 @@ page:number = 1;
     })
   }
   service_item(id:any){
-    this.router.navigate(['equipment-info',id]);
+    this.router.navigate(['equipment-info',id],{relativeTo:this.active});
 }
 isLoggedIn():boolean{
 return this.admin.checkToken();
 
 }
 add(){
-  window.alert("called");
   this.router.navigate(['add-equips'],{relativeTo:this.active});
+}
+
+edit(id:any){
+  this.router.navigate(['equip-info',id],{relativeTo:this.active});
+}
+
+remove(id:any){
+  window.confirm("Are you sure")
+  if(confirm()==true)
+  {
+    this.equips.removeEquipment(id).subscribe(data=>{
+      if(data.message = "Deleted successfully"){
+        this.notify.success("Equipment deleted");
+      }
+      else{
+        this.notify.error("Unable to delete");
+      }
+    
+    })
+  
+  }
 }
 }
