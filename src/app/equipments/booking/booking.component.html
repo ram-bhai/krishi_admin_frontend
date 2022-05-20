@@ -7,30 +7,34 @@
 <body>
 
     <div class="container mt-3">
-        <h2 style="text-align: center;">Rejected-Requests</h2>
+        <h2 style="text-align: center;">Equipments-List</h2>
         <table class="table table-hover table-bordered">
             <thead style="text-align: center;">
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Image</th>
-                    <th>Area</th>
-                    <th>Status</th>
+                    <th>Contact No.</th>
+                    <th>Booked Equipment</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Address</th>
+                    <th>Shipping</th>
                     <!-- <th>Edit</th>
                     <th>Delete</th> -->
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let tool of requests| paginate:{itemsPerPage:5,
+                <tr *ngFor="let tool of bookedEquipments| paginate:{itemsPerPage:5,
                      currentPage:page,
                     totalItems:totalLength}" style="text-align: center;">
-                    <td>{{tool.name}}</td>
-                    <td>{{tool.email}}</td>
+                    <td>{{tool.userId.name}}</td>
                     <td>{{tool.mobile}}</td>
-                    <td><img src="{{tool.image}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td>
-                    <td>{{tool.Area}}</td>
-                    <td>{{tool.isApproved ? "Approve":"Reject"}}</td>
+                    <td *ngFor="let tools of tool.orderList">{{tools.tool_id.name}}</td>
+                    <!-- <td><img src="{{tool.images}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td> -->
+                    <td>{{tool.total}}</td>
+                    <td>{{tool.payment ? "done":"pending"}}</td>
+                    <td>{{tool.address}}</td>
+                    <td>{{tool.shipping ? "delivered":"Pending"}}</td>
+                    <!-- <td>{}}</td> -->
                     <!-- <td><i class="fas fa-edit" (click)="edit(tool._id)" style="color: blue;"></i></td>
                     <td><i class="fa fa-trash" (click)="remove(tool._id)" style="color: red"></i></td> -->
                 </tr>

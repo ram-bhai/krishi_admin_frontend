@@ -20,4 +20,8 @@ export class DashboardComponent implements OnInit {
   List(){
     this.router.navigate(['view-equips'],{relativeTo: this.activatedRoute});
   }
+
+  booking(){
+    this.router.navigate(['booking'],{relativeTo:this.activatedRoute})
+  }
 }

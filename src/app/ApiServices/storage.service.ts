@@ -9,6 +9,7 @@ export class StorageService {
   addstorage = "http://localhost:3000/storage/add";
   view = "http://localhost:3000/storageCategory/view";
   allStore = "http://localhost:3000/storage/view-storage";
+  update = "http://localhost:3000/storage/"
 
   public responseCache = new Map();
 
@@ -30,15 +31,9 @@ export class StorageService {
     return response;
   }
 
-  
+  updatestorages(formData:FormData):Observable<any>{
+    return this.http.post<any>(this.update,formData)
+  }
 
-  // service_Api():Observable<any>{
-  //   const equipsfromCache = this.responseCache.get(this.equips);
-  //   if(equipsfromCache){
-  //     return of(equipsfromCache);
-  //   }
-  //   const response = this.http.get<any>(this.equips); 
-  //   response.subscribe(equipment => this.responseCache.set(this.equips,equipment));
-  //   return response; 
-  // }
+
 }

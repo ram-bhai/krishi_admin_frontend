@@ -5,18 +5,20 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { EquipmentsRoutingModule } from './equipments-routing.module';
 import { ViewEquipmentsComponent } from './view-equipments/view-equipments.component';
 import { AddEquipmentsComponent } from './add-equipments/add-equipments.component';
-import { EquipDetailComponent } from './equip-detail/equip-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { EditEquipmentComponent } from './edit-equipment/edit-equipment.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 @NgModule({
   declarations: [
     ViewEquipmentsComponent,
     AddEquipmentsComponent,
-    EquipDetailComponent,
     DashboardComponent,
+    EditEquipmentComponent,
+    BookingComponent,
   ],
   imports: [
     CommonModule,

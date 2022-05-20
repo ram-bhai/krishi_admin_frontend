@@ -17,6 +17,8 @@ loadChildren:()=> import('./storage/storage.module').then
 {path:'contract-farming',
 loadChildren:()=> import('./contract-farming/contract-farming.module').then
 (module=>module.ContractFarmingModule)},
+{path:'customers',
+loadChildren:()=> import('./customers/customers.module').then(m => m.CustomersModule)},
    {path:'**', component:ErrorpageComponent}
 ];
 

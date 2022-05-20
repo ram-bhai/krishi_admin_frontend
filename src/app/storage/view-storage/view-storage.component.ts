@@ -9,11 +9,12 @@ import{StorageService} from '../../ApiServices/storage.service'
   styleUrls: ['./view-storage.component.css']
 })
 export class ViewStorageComponent implements OnInit {
-  storages:any;
+  
   paginate:any
   totalLength?:number;
   page:number = 1;
   storage:any;
+ 
   
   constructor(private router:Router,
     private active:ActivatedRoute,
@@ -30,9 +31,17 @@ export class ViewStorageComponent implements OnInit {
   }
   // 
   
-  edit(id:any){
-    this.router.navigate(['equip-info',id],{relativeTo:this.active});
+  edit(sid:any){
+    console.log(sid)
+    this.router.navigate(['storage/edit-storage',sid]);
   }
+
+  editItem(storeId:any){
+    console.log(storeId)
+    this.router.navigate(['storage/edit-items',storeId]);
+  }
+
+  removeItem(productId:any){}
   
   remove(id:any){
     window.confirm("Are you sure")

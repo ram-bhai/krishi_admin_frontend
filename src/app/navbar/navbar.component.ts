@@ -20,7 +20,6 @@ export class NavbarComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(NavbarComponent, {
       width: '250px',
-      // data: {name: this.name, animal: this.animal},
     });
 
     dialogRef.afterClosed().subscribe(result => {

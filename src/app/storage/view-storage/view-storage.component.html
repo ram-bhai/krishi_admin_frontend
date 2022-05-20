@@ -15,6 +15,7 @@
                     <th>Capacity</th>
                     <th>Image</th>
                     <th>location</th>
+                    <th>Items</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -27,6 +28,13 @@
                     <td>{{item.capacity}}</td>
                     <td><img src="{{item.image}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td>
                     <td>{{item.location}}</td>
+                    <td>
+                        <div>
+                            <a *ngFor="let products of item.items">{{products.name}} - {{products.charges}}₹/- 50kg
+                           <span><i class="fas fa-edit" (click)="editItem(products._id)" style="color: blue;"></i></span>
+                           <span><i class="fa fa-trash" (click)="removeItem(products._id)" style="color:red"></i></span><br></a>
+                        </div>
+                    </td>
                     <td><i class="fas fa-edit" (click)="edit(item._id)" style="color: blue;"></i></td>
                     <td><i class="fa fa-trash" (click)="remove(item._id)" style="color: red;"></i></td>
                 </tr>
