@@ -39,19 +39,19 @@ isLoggedIn():boolean{
 return this.admin.checkToken();
 
 }
-add(){
-  this.router.navigate(['add-equips'],{relativeTo:this.active});
-}
+// add(){
+//   this.router.navigate(['add-equips'],{relativeTo:this.active});
+// }
 
-edit(id:any){
-  this.router.navigate(['equip-info',id],{relativeTo:this.active});
+edit(pid:any){
+  console.log(pid)
+  this.router.navigate(['services/edit-equip',pid]);
 }
 
 remove(id:any){
   window.confirm("Are you sure")
   if(confirm()==true)
   {
-    
     this.equips.removeEquipment(id).subscribe(data=>{
       console.log(data)
       if(data.message = "Deleted successfully"){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContractService } from 'src/app/ApiServices/contract.service';
 
 @Component({
   selector: 'app-accepted',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accepted.component.css']
 })
 export class AcceptedComponent implements OnInit {
-
-  constructor() { }
+  tools:any;
+  paginate:any
+  totalLength?:number;
+  page:number = 1;
+  
+  constructor(private contracts:ContractService) { }
 
   ngOnInit(): void {
+    this.contracts.accepted().subscribe(data=>{
+      this.tools = data;
+      this.totalLength = data.length;
+    })
+  }
   }
 
-}
+

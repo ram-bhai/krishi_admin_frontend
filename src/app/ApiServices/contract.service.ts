@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContractService {
-  accept = "http://localhost:3000/contracts/"
+  accept = "http://localhost:3000/contracts/accepted-req"
 requests = "http://localhost:3000/contracts/view-requests";
 cancelled = "http://localhost:3000/contracts/cancelled";
 approve = "http://localhost:3000/contracts/update/";

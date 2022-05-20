@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorpageComponent } from '../errorpage/errorpage.component';
 import { AddEquipmentsComponent } from './add-equipments/add-equipments.component';
-import { EquipDetailComponent } from './equip-detail/equip-detail.component';
 import { ViewEquipmentsComponent } from './view-equipments/view-equipments.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import { EditEquipmentComponent } from './edit-equipment/edit-equipment.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
 
@@ -12,8 +12,8 @@ const routes: Routes = [
 children:[
   {path:'add-equips',component:AddEquipmentsComponent},
   {path:'view-equips',component:ViewEquipmentsComponent},
-  {path:'euip-info/:id',component:EquipDetailComponent},
-
+  {path:'edit-equip/:id',component:EditEquipmentComponent},
+  {path:'booking',component:BookingComponent}
 ]
 }
 ];

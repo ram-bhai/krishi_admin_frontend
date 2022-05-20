@@ -1,39 +1,47 @@
 <!-- <div class="container-fluid" style="margin: 0;padding:0;">
     <div class="banner">
         <hr>
-        <h1>Requsts for Contract-Farming</h1>
+        <h1>Equipment-Lists</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic odio beatae quam illum soluta saepe aperiam autem perspiciatis! Minima eligendi possimus ipsum eveniet dignissimos quibusdam doloribus quod nostrum, asperiores nobis.</p>
     </div>
 </div>
-
+<div><button class="btn btn-primary" (click)="add()">Add New Equipment</button></div>
 
 <div class="container">
 
-    <div *ngFor="let item of requests |
+    <div *ngFor="let item of tools |
      paginate:{itemsPerPage:5,
         currentPage:page,
     totalItems:totalLength
 }" class="row cards2">
+
         <div class="col-lg-6 col-md-6 col-sm-12 left2">
-            <img src="{{item.image}}" alt="" class="left2_img">
+            <img src="{{item.images}}" alt="" class="left2_img">
         </div>
 
 
         <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
-            <h4>Owner : {{item.name}}</h4>
-            <h4>Contact : {{item.mobile}}</h4>
-            <h4>Area : {{item.Area}}</h4>
-            <h4>Duration : {{item.duration}}</h4>
-            <p class="description">Description : {{item.description}}</p>
+            <h1>{{item.name}}</h1>
 
-            <button class="view_more" (click)="approve(item._id)">Approved</button>
-            <button class="view_more" (click)="cancel(item._id)">Cancel</button>
+            <button class="view_more" (click)="service_item(item._id)">View More</button>
+
+            <p class="description">Description : {{item.description}}</p>
+            <h4>Fare price : {{item.charges}}</h4>
+            <div class="reviews">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-comment"></i>
+                <i class="fas fa-share-alt"></i>
+            </div>
         </div>
     </div>
     <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
 </div> -->
-
-
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -44,33 +52,28 @@
 <body>
 
     <div class="container mt-3">
-        <h2 style="text-align: center;">Contract-Farming Requests</h2>
+        <h2 style="text-align: center;">Equipments-List</h2>
         <table class="table table-hover table-bordered">
             <thead style="text-align: center;">
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Contact no.</th>
-                    <th>Image</th>
-                    <th>Area</th>
-                    <th>Status</th>
-                    <th>Accept</th>
-                    <th>Reject</th>
+                    <th>Address</th>
+
+                    <!-- <th>Edit</th>
+                    <th>Delete</th> -->
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of requests| paginate:{itemsPerPage:5,
+                <tr *ngFor="let tool of customers| paginate:{itemsPerPage:5,
                      currentPage:page,
                     totalItems:totalLength}" style="text-align: center;">
-                    <td>{{item.name}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.mobile}}</td>
-                    <td><img src="{{item.image}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td>
-                    <td>{{item.Area}}</td>
-                    <td>{{item.isApproved ? "Approve":"Reject"}}</td>
-                    <td><i class="fa fa-check" (click)="approve(item._id)" style="color: green;"></i></td>
-                    <td><i class="fa fa-times" (click)="cancel(item._id)" style="color: red;"></i></td>
-                </tr>
+                    <td>{{tool.name}}</td>
+                    <td>{{tool.email}}</td>
+                    <td>{{tool.address}}</td>
+                    <!-- <td><i class="fas fa-edit" (click)="edit(tool._id)" style="color: blue;"></i></td>
+                    <td><i class="fa fa-trash" (click)="remove(tool._id)" style="color: red"></i></td>
+                </tr> -->
             </tbody>
         </table>
     </div>
