@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdminService } from '../ApiServices/admin.service';
+import { ConfirmationComponent } from '../confirmation/confirmation.component';
 
 @Component({
   selector: 'app-navbar',
@@ -18,14 +19,7 @@ export class NavbarComponent implements OnInit {
     this.appear=!this.appear;
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(NavbarComponent, {
-      width: '250px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
-    });
+    this.dialog.open(ConfirmationComponent);
   }
   toggle2(){
     this.close=!this.close;
