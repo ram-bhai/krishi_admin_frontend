@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog,MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmation',
@@ -8,11 +9,20 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private dialog:MatDialog,private ref:MatDialogRef<any>) { }
 
   ngOnInit(): void {
   }
+  signout(){
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('id');
+    this.router.navigate(['sign-in']);
+    this.ref.close();
+  }
 
+  dialogClose(){
+    this.ref.close();
+  }
 
   
 
