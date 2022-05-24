@@ -11,24 +11,24 @@
      </select> <br> -->
     <div class="form-group">
         <label>Name</label>
-        <input [(ngModel)]="updateItem.name" type="text" name="name" class="form-control" placeholder="name">
+        <input [(ngModel)]="item.name" type="text" class="form-control" placeholder="{{product[0].name}}">
     </div>
     <div class="form-group">
         <label>Weight</label>
-        <input [(ngModel)]="updateItem.weight" type="text" name="Weight" class="form-control" placeholder="Weight">
+        <input [(ngModel)]="item.weight" type="text" class="form-control" placeholder="{{product[0].weight}}">
     </div>
     <div class="form-group">
         <label>Description</label>
-        <input [(ngModel)]="updateItem.description" type="text" name="description" class="form-control" placeholder="description">
+        <input [(ngModel)]="item.description" type="text" name="description" class="form-control" placeholder="{{product[0].description}}">
     </div>
 
     <div class="form-group">
         <label>Tempreture</label>
-        <input [(ngModel)]="updateItem.temperature" type="text" name="tempreature" class="form-control" placeholder="tempreature">
+        <input [(ngModel)]="item.temperature" type="text" class="form-control" placeholder="{{product[0].temperature}}">
     </div>
     <div class="form-group">
         <label>Charges</label>
-        <input type="text" [(ngModel)]="updateItem.charges" name="charge" class="form-control" placeholder="charge">
+        <input type="text" [(ngModel)]="item.charges" class="form-control" placeholder="{{product[0].charges}}">
     </div>
     <br>
     <div class="form-group">

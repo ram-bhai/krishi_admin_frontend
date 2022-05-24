@@ -48,13 +48,14 @@ edit(pid:any){
   this.router.navigate(['services/edit-equip',pid]);
 }
 
-remove(id:any){
+remove(id:any,rowIndex:number){
   window.confirm("Are you sure")
   if(confirm()==true)
   {
     this.equips.removeEquipment(id).subscribe(data=>{
       console.log(data)
       if(data.message = "Deleted successfully"){
+        this.tools.splice(rowIndex,1);
         this.notify.success("Equipment deleted");
       }
       else{

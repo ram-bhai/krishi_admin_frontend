@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ItemsService } from 'src/app/ApiServices/items.service';
 import{StorageService} from '../../ApiServices/storage.service'
 
 @Component({
@@ -19,6 +20,7 @@ export class ViewStorageComponent implements OnInit {
   constructor(private router:Router,
     private active:ActivatedRoute,
     private store:StorageService,
+    private item:ItemsService,
     private notify:ToastrService) {}
 
   ngOnInit(): void {
@@ -28,31 +30,45 @@ export class ViewStorageComponent implements OnInit {
       this.totalLength = data.length;
 
     })
-  }
-  // 
+  } 
   
-  edit(sid:any){
-    console.log(sid)
-    this.router.navigate(['storage/edit-storage',sid]);
+  edit(id:any){
+    console.log(id)
+    alert(id);
+    this.router.navigate(['storage/edit-storage',id]);
   }
 
-  editItem(storeId:any){
+  editItem(itemId:any,storeId:any){
     console.log(storeId)
-    this.router.navigate(['storage/edit-items',storeId]);
+    this.router.navigate(['storage/edit-items',itemId,storeId]);
   }
-
-  removeItem(productId:any){}
   
-  remove(id:any){
+  removeItem(productId:any, storageId:any,rowIndex:number){
+    window.alert("Are you sure")
+    if(confirm()==true){
+      this.item.removeItem(productId,storageId).subscribe(data=>{
+        if(data){
+          this.storage.splice(rowIndex,1);
+          this.notify.success("Item deleted");
+        }
+        else{
+          this.notify.error("Unable to delete Item")
+        }
+      })
+    }
+  }
+  
+  remove(id:any,rowIndex:number){
     window.confirm("Are you sure")
     if(confirm()==true)
     {
-      this.store.storage_view().subscribe(data=>{
-        if(data.message = "Deleted successfully"){
-          this.notify.success("Equipment deleted");
+      this.store. removeStorage_id(id).subscribe(data=>{
+        if(data.message = "Storage Deleted"){
+          this.storage.splice(rowIndex,1);
+          this.notify.success("Storage deleted");
         }
         else{
-          this.notify.error("Unable to delete");
+          this.notify.error("Unable to delete Storage");
         }
       
       })

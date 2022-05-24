@@ -5,7 +5,7 @@ export class EditItems {
         public description:string,
         public temperature:string,
         public charges:string,
-        public sid:any,
-        public store_id:any
+
+    
     ){}
 }

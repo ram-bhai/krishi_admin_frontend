@@ -10,6 +10,7 @@ import { ViewStorageComponent } from './view-storage/view-storage.component';
 import { EditStorageComponent } from './edit-storage/edit-storage.component';
 import { EditItemsComponent } from './edit-items/edit-items.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BookingStorageComponent } from './booking-storage/booking-storage.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     StorageDashboardComponent,
     ViewStorageComponent,
     EditStorageComponent,
-    EditItemsComponent
+    EditItemsComponent,
+    BookingStorageComponent
   ],
   imports: [
     CommonModule,
