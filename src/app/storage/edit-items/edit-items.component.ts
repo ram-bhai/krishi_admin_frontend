@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ItemsService } from 'src/app/ApiServices/items.service';
 import { EditItems } from 'src/app/models/edit-items';
@@ -10,15 +10,32 @@ import { EditItems } from 'src/app/models/edit-items';
   styleUrls: ['./edit-items.component.css']
 })
 export class EditItemsComponent implements OnInit {
-updateItem:EditItems = new EditItems("",50,"","","","","")
-  constructor(private items:ItemsService,private notify:ToastrService,
-    private router:Router) { }
+item:EditItems = new EditItems("",0,"","","");
+item_id:any;
+sid:any;
+product:any;
+name:any;
+  constructor(private items:ItemsService,private notify:ToastrService,private activerouter:ActivatedRoute,
+    private router:Router) {
+      this.item_id = this.activerouter.snapshot.paramMap.get('id');
+      this.sid = this.activerouter.snapshot.paramMap.get('sid');
+    
+      console.log(this.item_id+" "+ this.sid);
+      this.items.user_Item(this.item_id,this.sid).subscribe(data=>{
+
+        console.log(data);
+        this.product = data;
+        this.name = data.name;
+        console.log(data[0].name);
+          })
+      
+     }
 
   ngOnInit(): void {
   }
 
   additems() {
-    this.items.updateItem(this.updateItem).subscribe(data => {
+    this.items.storage_User(this.sid,this.item_id,this.item).subscribe(data => {
       console.log(data);
       if (data) {
         console.log(data);

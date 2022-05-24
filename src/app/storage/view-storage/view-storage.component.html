@@ -23,20 +23,20 @@
             <tbody>
                 <tr *ngFor="let item of storage | paginate:{itemsPerPage:5,
                      currentPage:page,
-                    totalItems:totalLength}" style="text-align: center;">
+                    totalItems:totalLength}; index as i" style="text-align: center;">
                     <td>{{item.name}}</td>
                     <td>{{item.capacity}}</td>
                     <td><img src="{{item.image}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td>
                     <td>{{item.location}}</td>
                     <td>
                         <div>
-                            <a *ngFor="let products of item.items">{{products.name}} - {{products.charges}}₹/- 50kg
-                           <span><i class="fas fa-edit" (click)="editItem(products._id)" style="color: blue;"></i></span>
-                           <span><i class="fa fa-trash" (click)="removeItem(products._id)" style="color:red"></i></span><br></a>
+                            <a *ngFor="let products of item.items; index as j">{{products.name}} - {{products.charges}}₹/- 50kg
+                           <span><i class="fas fa-edit" (click)="editItem(products._id,item._id)" style="color: blue;"></i></span>
+                           <span><i class="fa fa-trash" (click)="removeItem(products._id,item._id,j)" style="color:red"></i></span><br></a>
                         </div>
                     </td>
                     <td><i class="fas fa-edit" (click)="edit(item._id)" style="color: blue;"></i></td>
-                    <td><i class="fa fa-trash" (click)="remove(item._id)" style="color: red;"></i></td>
+                    <td><i class="fa fa-trash" (click)="remove(item._id,i)" style="color: red;"></i></td>
                 </tr>
             </tbody>
         </table>

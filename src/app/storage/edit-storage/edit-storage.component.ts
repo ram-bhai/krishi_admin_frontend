@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { StorageService } from 'src/app/ApiServices/storage.service';
 import { EditStorage } from 'src/app/models/edit-storage';
 
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-edit-storage',
   templateUrl: './edit-storage.component.html',
   styleUrls: ['./edit-storage.component.css']
 })
 export class EditStorageComponent implements OnInit {
-
+  result:any;
   storages:any;
-
+  pid:any;
  editStorage:EditStorage = new EditStorage("","","","","","","","","")
-  constructor(private notify:ToastrService,
+  constructor(private activerouter:ActivatedRoute,private notify:ToastrService,
     private router:Router,
-    private store:StorageService) { }
+    private store:StorageService) {
+      this.pid = this.activerouter.snapshot.paramMap.get('id');
+      alert(this.pid);
+      console.log(this.pid);
+      this.store.storage_View_id(this.pid).subscribe(data=>{
+        alert(data);
+       this.result = data;
+       console.log(this.result);
+      });
+     }
 
   
   selectimage(event: any) {
@@ -41,7 +50,7 @@ export class EditStorageComponent implements OnInit {
 
     formData.append('image', this.editStorage.image);
 
-    this.store.updatestorages(formData).subscribe(data => {
+    this.store.updatestorages(formData,this.pid).subscribe(data => {
       console.log(formData);
       if (data) {
         console.log(data);

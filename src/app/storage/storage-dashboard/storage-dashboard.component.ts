@@ -25,7 +25,9 @@ export class StorageDashboardComponent implements OnInit {
     this.router.navigate(['add-items'],{relativeTo:this.active});
   }
 
-  
+  book(){
+    this.router.navigate(['booked-storages'],{relativeTo:this.active});
+  }
 
 
 
