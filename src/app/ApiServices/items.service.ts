@@ -9,12 +9,12 @@ import { EditItems } from '../models/edit-items';
 })
 export class ItemsService {
 
-item = "http://localhost:3000/storage/items/";
-remove = "http://localhost:3000/storage/delete-items/";
-additems="http://localhost:3000/storage/add-items";
-viewItems = "http://localhost:3000/storage/view-storage";
-updates = "http://localhost:3000/storage/view-storage";
-update_Item = "http://localhost:3000/storage/items/";
+item = "https://krishi-backend.herokuapp.com/storage/items/";
+remove = "https://krishi-backend.herokuapp.com/storage/delete-items/";
+additems="https://krishi-backend.herokuapp.com/storage/add-items";
+viewItems = "https://krishi-backend.herokuapp.com/storage/view-storage";
+updates = "https://krishi-backend.herokuapp.com/storage/view-storage";
+update_Item = "https://krishi-backend.herokuapp.com/storage/items/";
 
 
   constructor(private http:HttpClient) { }

@@ -6,13 +6,13 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class StorageService {
-  addstorage = 'http://localhost:3000/storage/add';
-  view = 'http://localhost:3000/storageCategory/view';
-  allStore = 'http://localhost:3000/storage/view-storage';
-  update = 'http://localhost:3000/storage/update-items/';
-  book = 'http://localhost:3000/booked-storage/view-booked';
-  remove = 'http://localhost:3000/storage/delete-storage';
-  view_User = 'http://localhost:3000/storage/view-storage';
+  addstorage = 'https://krishi-backend.herokuapp.com/storage/add';
+  view = 'https://krishi-backend.herokuapp.com/storageCategory/view';
+  allStore = 'https://krishi-backend.herokuapp.com/storage/view-storage';
+  update = 'https://krishi-backend.herokuapp.com/storage/update-items/';
+  book = 'https://krishi-backend.herokuapp.com/booked-storage/view-booked';
+  remove = 'https://krishi-backend.herokuapp.com/storage/delete-storage';
+  view_User = 'https://krishi-backend.herokuapp.com/storage/view-storage';
 
   public responseCache = new Map();
 

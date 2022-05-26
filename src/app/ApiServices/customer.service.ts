@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerService {
- customers = "http://localhost:3000/customer/view";
+ customers = "https://krishi-backend.herokuapp.com/customer/view";
 
 //  const responsecache = new Map();
   constructor(private http:HttpClient) { }

@@ -7,7 +7,7 @@ import { Admin } from '../models/admin';
   providedIn: 'root'
 })
 export class AdminService {
- signin = "http://localhost:3000/admin/signIn";
+ signin = "https://krishi-backend.herokuapp.com/admin/signIn";
   constructor(private http:HttpClient) { }
 
   signIn(credentials:Admin):Observable<any>{

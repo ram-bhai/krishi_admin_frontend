@@ -7,12 +7,12 @@ import { Addservice } from '../models/addservice';
   providedIn: 'root'
 })
 export class EquipService{
-  equips = "http://localhost:3000/service/view-services";
-  equip_detail = "http://localhost:3000/service/view-services/";
-  add_equip = "http://localhost:3000/service/add";
-  edit_equip = "http://localhost:3000/service/update";
-  remove = "http://localhost:3000/service/delete";
-  booking = "http://localhost:3000/order/view-order";
+  equips = "https://krishi-backend.herokuapp.com/service/view-services";
+  equip_detail = "https://krishi-backend.herokuapp.com/service/view-services/";
+  add_equip = "https://krishi-backend.herokuapp.com/service/add";
+  edit_equip = "https://krishi-backend.herokuapp.com/service/update";
+  remove = "https://krishi-backend.herokuapp.com/service/delete";
+  booking = "https://krishi-backend.herokuapp.com/order/view-order";
   
   constructor(private http:HttpClient) { }
 
