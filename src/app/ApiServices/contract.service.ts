@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContractService {
-  accept = "https://krishi-backend.herokuapp.com/contracts/accepted-req"
-requests = "https://krishi-backend.herokuapp.com/contracts/view-requests";
-cancelled = "https://krishi-backend.herokuapp.com/contracts/cancelled";
-approve = "https://krishi-backend.herokuapp.com/contracts/update/";
-viewone = "https://krishi-backend.herokuapp.com/contracts/viewOne/:cid";
-deny = "https://krishi-backend.herokuapp.com/contracts/cancel/";
+  accept = "https://krishi-backend.herokuapp.com/contract/accepted-req"
+requests = "https://krishi-backend.herokuapp.com/contract/view-requests";
+cancelled = "https://krishi-backend.herokuapp.com/contract/cancelled";
+approve = "https://krishi-backend.herokuapp.com/contract/update/";
+viewone = "https://krishi-backend.herokuapp.com/contract/viewOne/:cid";
+deny = "https://krishi-backend.herokuapp.com/contract/cancel/";
 
   constructor(private http:HttpClient) { }
 
