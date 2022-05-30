@@ -1,0 +1,30 @@
+.btn{
+    position: relative;
+    background: none;
+    color: black;
+    border: solid 1px #121212;
+    transition: color 200ms;
+    margin-left: 100px;
+  
+}
+.palak{
+    margin-left: 250px;
+    margin-top: 100px;
+}
+.btn:is(:hover,:focus){
+    color: rgb(227, 236, 237);
+}
+.btn::after{
+    position: absolute;
+    content: "";
+    inset: 0;
+    z-index: -1;
+    background-color: #9e1434c7;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 200ms;
+}
+.btn:is(:hover,:focus)::after{
+    transform: scale(1);
+}
+
