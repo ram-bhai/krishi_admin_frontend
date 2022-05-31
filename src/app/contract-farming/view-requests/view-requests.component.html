@@ -24,15 +24,15 @@
             <tbody>
                 <tr *ngFor="let item of requests| paginate:{itemsPerPage:5,
                      currentPage:page,
-                    totalItems:totalLength}" style="text-align: center;">
-                    <td>{{item.name}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.mobile}}</td>
-                    <td><img src="{{item.image}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td>
-                    <td>{{item.Area}}</td>
-                    <td>{{item.isApproved ? "Approve":"Reject"}}</td>
-                    <td><i class="fa fa-check" (click)="approve(item._id)" style="color: green;"></i></td>
-                    <td><i class="fa fa-times" (click)="cancel(item._id)" style="color: red;"></i></td>
+                    totalItems:totalLength},index as i" style="text-align: center;">
+                    <td *ngIf="!item.isApproved">{{item.name}}</td>
+                    <td *ngIf="!item.isApproved">{{item.email}}</td>
+                    <td *ngIf="!item.isApproved">{{item.mobile}}</td>
+                    <td *ngIf="!item.isApproved"><img src="{{item.image}}" alt="images" style="width: 100px; height:100px; border-radius:50%"></td>
+                    <td *ngIf="!item.isApproved">{{item.Area}}</td>
+                    <td *ngIf="!item.isApproved">{{item.isApproved ? "Approve":"Reject"}}</td>
+                    <td *ngIf="!item.isApproved"><i class="fa fa-check" (click)="approve(item._id,i)" style="color: green;"></i></td>
+                    <td *ngIf="!item.isApproved"><i class="fa fa-times" (click)="cancel(item._id)" style="color: red;"></i></td>
                 </tr>
             </tbody>
         </table>

@@ -34,23 +34,26 @@ export class ViewRequestsComponent implements OnInit {
       this.contracts.viewContracts().subscribe(data=>{
         this.requests = data;
         this.totalLength = data.length;
+        console.log(data);
       })
     }
     openDialog(): void {
       this.dialog.open(ConfirmationComponent);
     }
 
-    approve(cid:any){
+    approve(cid:any,i:any){
       window.confirm("Are you sure");
+      this.requests.splice(i, 1);
       if(confirm()==true){
         this.pending = false,
       this.approved=true,
       this.verification = true
       this.contracts.approval(this.pending,this.verification,this.approved,cid).subscribe(data=>{
-        this.requests = data;
         console.log(data);
-        if(data)
+        if(data.message = "Request approved"){
+        console.log("Approved");
         this.notify.success("Request approved");
+        }
         else
           this.notify.error("Request not approved");
       },
